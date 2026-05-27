@@ -1,0 +1,66 @@
+name: Library or metadata issue
+description: Report import, artwork, album, artist, tag, sorting, or library display problems.
+title: "[Library]: "
+labels:
+  - bug
+  - library
+  - metadata
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This report is public. Redact private paths and cloud-account details, and do not upload music or copyrighted artwork.
+  - type: input
+    id: app_version
+    attributes:
+      label: FlacPlayer version
+      placeholder: "Example: 0.1 (42)"
+    validations:
+      required: true
+  - type: input
+    id: device_os
+    attributes:
+      label: Device and OS version
+      placeholder: "Example: iPhone 16 Pro, iOS 19.4"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Import
+        - Albums
+        - Artists
+        - Artwork
+        - Track tags
+        - Search or sorting
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Replace any private folder or cloud location names with generic descriptions.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected library display or behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual library display or behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have removed private file paths, account information, music files, artwork files, and security-sensitive details.
+          required: true

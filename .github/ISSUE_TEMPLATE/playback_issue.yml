@@ -1,0 +1,71 @@
+name: Playback or audio quality issue
+description: Report playback failures, interruptions, output-route problems, or audio quality concerns.
+title: "[Playback]: "
+labels:
+  - bug
+  - playback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Audio reports need enough signal-path detail to diagnose accurately. Do not upload copyrighted audio files or include private information.
+  - type: input
+    id: app_version
+    attributes:
+      label: FlacPlayer version
+      placeholder: "Example: 0.1 (42)"
+    validations:
+      required: true
+  - type: input
+    id: device_os
+    attributes:
+      label: Device and OS version
+      placeholder: "Example: iPhone 16 Pro, iOS 19.4"
+    validations:
+      required: true
+  - type: input
+    id: output_route
+    attributes:
+      label: Output route
+      description: Include headphones, dongle, DAC, Bluetooth device, AirPlay, or built-in speaker as applicable.
+      placeholder: "Example: USB-C DAC into wired headphones"
+    validations:
+      required: true
+  - type: dropdown
+    id: eq_state
+    attributes:
+      label: EQ state
+      options:
+        - Disabled
+        - Enabled
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: track_characteristics
+    attributes:
+      label: Track characteristics
+      description: State format, sample rate, and bit depth if known. Do not attach the audio file.
+      placeholder: "Example: FLAC, 96 kHz, 24-bit"
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What did you hear or observe?
+      description: Describe dropouts, silence, unexpected resampling indication, route changes, crashes, or other behavior.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have not included copyrighted audio, private data, or security-sensitive details in this public report.
+          required: true
